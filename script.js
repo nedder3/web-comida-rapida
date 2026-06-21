@@ -360,17 +360,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // If valid, show success screen
       if (isValid) {
-        const data = {
-          clientName: nameInput.value.trim(),
-          clientEmail: emailInput.value.trim(),
-          orderCombo: subjectSelect.value,
-          specialNotes: messageText.value.trim(),
-          submittedAt: new Date().toISOString()
-        };
+        const val = subjectSelect.value;
+        let price = "$18.00";
+        if (val.includes("Patria")) price = "$18.00";
+        else if (val.includes("Carnicero")) price = "$16.00";
+        else if (val.includes("Veggie")) price = "$12.00";
+        else if (val.includes("Alitas")) price = "$10.00";
+        else if (val.includes("Familiar")) price = "$30.00";
 
-        // Render JSON preview
+        const date = new Date();
+        const formattedDate = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+        const ticketNum = Math.floor(100000 + Math.random() * 900000);
+        
+        const receiptText = `================================
+   VOUGHT INTERNATIONAL DINER
+       BOYSBURGER® - PALERMO
+================================
+TICKET: #${ticketNum}
+FECHA:  ${formattedDate}
+--------------------------------
+CLIENTE: ${nameInput.value.trim().toUpperCase()}
+EMAIL:   ${emailInput.value.trim()}
+--------------------------------
+PRODUCTO                 IMPORTE
+1x ${val.padEnd(23).substring(0, 23)} ${price}
+--------------------------------
+NOTAS:
+${messageText.value.trim()}
+--------------------------------
+ESTADO: PEDIDO EN PREPARACIÓN
+   ¡100% APROBADO POR VOUGHT!
+================================`;
+
+        // Render receipt preview
         if (formDataJson) {
-          formDataJson.innerText = JSON.stringify(data, null, 2);
+          formDataJson.innerText = receiptText;
         }
 
         // Show Overlay
