@@ -3,34 +3,50 @@
    ========================================================================== */
 :root {
   /* Figma Interface Design System Colors */
-  --figma-bg: #2c2c2c;
-  --figma-sidebar: #1e1e1e;
-  --figma-panel-header: #2c2c2c;
-  --figma-border: #333333;
+  --figma-bg: #1c1c1e;
+  --figma-sidebar: #121214;
+  --figma-panel-header: #1c1c1e;
+  --figma-border: #28282c;
   --figma-text-primary: #e3e3e3;
-  --figma-text-secondary: #969696;
+  --figma-text-secondary: #909098;
   --figma-accent: #0c8ce9;
-  --figma-accent-light: rgba(12, 140, 233, 0.1);
-  --figma-grid-color: rgba(255, 255, 255, 0.03);
+  --figma-accent-light: rgba(12, 140, 233, 0.15);
+  --figma-grid-color: rgba(255, 255, 255, 0.02);
 
-  /* BoysBurger Brand Design System Colors (Cálida y Enérgica) */
-  --brand-red: #d12630;         /* Estimula apetito y energía (Wendy's Red) */
-  --brand-red-hover: #b01d25;
-  --brand-yellow: #ffc72c;      /* Acento de diversión, juventud y rapidez */
-  --brand-yellow-hover: #e0ad20;
-  --brand-charcoal: #121212;    /* Aporta sofisticación, modernidad y contraste */
-  --brand-gray-dark: #1a1a1a;
-  --brand-gray-light: #f5f5f5;
+  /* BoysBurger Brand Design System Colors (Homelander / Vought Patriotic Theme) */
+  --brand-blue: #0b2240;         /* Deep Navy Blue (Homelander suit base) */
+  --brand-blue-hover: #07172c;
+  --brand-blue-light: #163660;
+  --brand-red: #df1f26;          /* Vivid Crimson Red (Vought cape red) */
+  --brand-red-hover: #b9151b;
+  --brand-gold: #ffb800;         /* Electric Golden Yellow (Homelander gold) */
+  --brand-gold-hover: #e09e00;
+  --brand-charcoal: #080d16;     /* Deep navy-charcoal background */
+  --brand-gray-dark: #0f1826;    /* Dark theme secondary surfaces */
+  --brand-gray-light: #f8f9fa;
   --brand-white: #ffffff;
-  --brand-border: #2c2c2c;
-  --brand-border-muted: rgba(255, 255, 255, 0.1);
+  --brand-border: rgba(255, 255, 255, 0.08);
+  --brand-border-muted: rgba(255, 255, 255, 0.05);
+  
+  /* Compound V accent for special lore badges */
+  --brand-cyan: #00f0ff;
+
+  /* Backward Compatibility Aliases */
+  --brand-yellow: var(--brand-gold);
+  --brand-yellow-hover: var(--brand-gold-hover);
+
+  /* Retro Diner Stripe Patterns */
+  --stripe-pattern: repeating-linear-gradient(45deg, var(--brand-red) 0px, var(--brand-red) 10px, var(--brand-white) 10px, var(--brand-white) 20px);
+  --stripe-pattern-subtle: repeating-linear-gradient(45deg, rgba(223, 31, 38, 0.1) 0px, rgba(223, 31, 38, 0.1) 8px, transparent 8px, transparent 16px);
+  --stripe-vertical: repeating-linear-gradient(90deg, rgba(223, 31, 38, 0.15) 0px, rgba(223, 31, 38, 0.15) 4px, transparent 4px, transparent 12px);
 
   /* Typography Fonts */
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-heading: 'Outfit', sans-serif; /* Usaremos pesos extra-bold para simular Lilita/impacto */
+  --font-heading: 'Outfit', sans-serif;
   
   /* Transitions */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-fast: all 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 * {
@@ -78,7 +94,9 @@ body {
 /* 1. TOP TOOLBAR */
 #figma-topbar {
   height: 48px;
-  background-color: var(--figma-sidebar);
+  background-color: rgba(18, 18, 20, 0.75);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
   border-bottom: 1px solid var(--figma-border);
   display: flex;
   justify-content: space-between;
@@ -203,7 +221,9 @@ body {
 /* 3. LEFT PAGES & LAYERS PANEL */
 #figma-leftpanel {
   width: 240px;
-  background-color: var(--figma-sidebar);
+  background-color: rgba(18, 18, 20, 0.7);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
   border-right: 1px solid var(--figma-border);
   display: flex;
   flex-direction: column;
@@ -375,6 +395,8 @@ body {
 
 .canvas-page {
   display: none;
+  opacity: 0;
+  transform: translateY(15px);
   flex-direction: column;
   gap: 80px;
   align-items: flex-start;
@@ -382,6 +404,18 @@ body {
 
 .canvas-page.active {
   display: flex;
+  animation: pageFadeIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 5. FIGMA CANVAS FRAMES */
@@ -440,7 +474,9 @@ body {
 /* 6. RIGHT PROPERTIES SIDEBAR */
 #figma-rightpanel {
   width: 240px;
-  background-color: var(--figma-sidebar);
+  background-color: rgba(18, 18, 20, 0.7);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
   border-left: 1px solid var(--figma-border);
   display: flex;
   flex-direction: column;
@@ -931,76 +967,139 @@ body {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: rgba(18, 18, 18, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--brand-border-muted);
+  background-color: rgba(8, 13, 22, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 100;
   transition: var(--transition-smooth);
+}
+
+/* Beautiful Patriotic Ribbon at top of Header */
+.restaurant-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, 
+    var(--brand-red) 0px, var(--brand-red) 16px, 
+    var(--brand-white) 16px, var(--brand-white) 32px, 
+    var(--brand-blue-light) 32px, var(--brand-blue-light) 48px,
+    var(--brand-white) 48px, var(--brand-white) 64px
+  );
+  z-index: 101;
 }
 
 .header-container {
   max-width: 950px;
   margin: 0 auto;
-  padding: 14px 20px;
+  padding: 16px 20px 12px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .restaurant-logo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 900;
-  color: var(--brand-red);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--brand-white);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .logo-accent {
-  color: var(--brand-yellow);
+  color: var(--brand-red);
+  background: linear-gradient(135deg, var(--brand-red) 30%, var(--brand-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
 }
 
 .restaurant-nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .nav-link {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #bbb;
-  transition: var(--transition-smooth);
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition-fast);
+  padding: 4px 0;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand-gold);
+  transition: var(--transition-fast);
 }
 
 .nav-link:hover {
-  color: var(--brand-yellow);
+  color: var(--brand-gold);
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .header-cta-btn {
-  background-color: var(--brand-red);
+  background: linear-gradient(135deg, var(--brand-red) 0%, #b90e17 100%);
   color: white;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: var(--transition-smooth);
+  letter-spacing: 0.05em;
+  padding: 8px 18px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(223, 31, 38, 0.25);
+  transition: var(--transition-fast);
 }
 
 .header-cta-btn:hover {
-  background-color: var(--brand-red-hover);
-  box-shadow: 0 4px 10px rgba(209, 38, 48, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(223, 31, 38, 0.4);
+  background: linear-gradient(135deg, #ff2e3b 0%, #b90e17 100%);
+}
+
+.header-cta-btn:active {
+  transform: scale(0.96);
 }
 
 /* 2. HERO SECTION */
 .hero-section {
-  padding: 60px 0;
-  border-bottom: 1px solid var(--brand-border-muted);
+  padding: 90px 0;
+  background: radial-gradient(circle at 80% 50%, rgba(223, 31, 38, 0.12) 0%, rgba(11, 34, 64, 0.05) 50%, transparent 100%), 
+              linear-gradient(180deg, var(--brand-charcoal) 0%, #05080e 100%);
   position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--brand-border);
+}
+
+/* Subtle patriotic diner vertical stripe texture in background */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--stripe-vertical);
+  opacity: 0.1;
+  pointer-events: none;
 }
 
 .hero-container {
@@ -1009,7 +1108,9 @@ body {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-text-content {
@@ -1018,68 +1119,102 @@ body {
 
 .hero-tagline {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  color: var(--brand-yellow);
-  letter-spacing: 1.5px;
+  color: var(--brand-gold);
+  letter-spacing: 2px;
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  background-color: rgba(255, 184, 0, 0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 184, 0, 0.15);
 }
 
 .hero-title {
-  font-size: 38px;
+  font-size: 46px;
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: var(--brand-white);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero-title span.highlight-red {
+  color: var(--brand-red);
+  background: linear-gradient(135deg, #ff2e3b 0%, #b90e17 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-title span.highlight-gold {
+  color: var(--brand-gold);
+  text-shadow: 0 0 15px rgba(255, 184, 0, 0.25);
 }
 
 .hero-description {
-  font-size: 13px;
-  color: #ccc;
-  margin-bottom: 24px;
+  font-size: 14px;
+  color: #a0aec0;
+  margin-bottom: 28px;
   line-height: 1.6;
 }
 
 .hero-actions {
   display: flex;
-  gap: 12px;
+  gap: 16px;
 }
 
 .btn-primary {
-  background-color: var(--brand-red);
+  background: linear-gradient(135deg, #ff2e3b 0%, #b90e17 100%);
   color: white;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  padding: 12px 24px;
-  border-radius: 4px;
+  letter-spacing: 0.05em;
+  padding: 14px 28px;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  box-shadow: 0 4px 12px rgba(223, 31, 38, 0.25);
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-primary:hover {
-  background-color: var(--brand-red-hover);
-  box-shadow: 0 4px 12px rgba(209, 38, 48, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(223, 31, 38, 0.4), 0 0 10px rgba(255, 46, 59, 0.2);
+  background: linear-gradient(135deg, #ff4753 0%, #b90e17 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.96);
 }
 
 .btn-secondary {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.02);
   color: var(--brand-white);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  padding: 11px 24px;
-  border-radius: 4px;
-  border: 1px solid #444;
+  letter-spacing: 0.05em;
+  padding: 13px 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: #666;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0) scale(0.96);
 }
 
 .hero-image-wrap {
@@ -1145,60 +1280,86 @@ body {
 .menu-filters {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 30px;
+  gap: 10px;
+  margin-bottom: 35px;
 }
 
 .filter-btn {
-  background-color: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  color: #bbb;
-  padding: 6px 16px;
+  background-color: var(--brand-gray-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 8px 18px;
   border-radius: 20px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .filter-btn:hover {
-  border-color: #444;
+  border-color: var(--brand-gold);
   color: var(--brand-white);
+  transform: translateY(-1px);
+}
+
+.filter-btn:active {
+  transform: scale(0.95);
 }
 
 .filter-btn.active {
-  background-color: var(--brand-yellow);
-  border-color: var(--brand-yellow);
-  color: var(--brand-charcoal);
-  font-weight: 700;
+  background-color: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: #05080e;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(255, 184, 0, 0.25);
 }
 
 /* Menu Grid */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 24px;
 }
 
 .menu-card {
-  background-color: #181818;
-  border: 1px solid var(--brand-border-muted);
-  border-radius: 6px;
+  background-color: #0b1523;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
   overflow: hidden;
   transition: var(--transition-smooth);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .menu-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 199, 44, 0.3);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-6px);
+  border-color: var(--brand-gold);
+  box-shadow: 0 12px 30px rgba(223, 31, 38, 0.15), 0 0 15px rgba(255, 184, 0, 0.05);
+}
+
+/* Highlight the Homeland combo card uniquely */
+.menu-card[data-featured="true"] {
+  border: 1px dashed var(--brand-gold);
+  background: linear-gradient(180deg, #0d1e34 0%, #0b1523 100%);
+}
+
+.menu-card[data-featured="true"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--stripe-pattern);
+  z-index: 2;
 }
 
 .menu-card-img-wrap {
   width: 100%;
-  height: 160px;
+  height: 165px;
   overflow: hidden;
   position: relative;
 }
@@ -1207,7 +1368,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .menu-card:hover .menu-card-img {
@@ -1216,32 +1377,50 @@ body {
 
 .dish-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 12px;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   background-color: var(--brand-red);
   color: white;
-  padding: 3px 8px;
-  border-radius: 3px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .dish-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 12px;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  background-color: var(--brand-yellow);
-  color: var(--brand-charcoal);
-  padding: 3px 8px;
-  border-radius: 3px;
+  background-color: var(--brand-gold);
+  color: #05080e;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom styles for Compound V and Special theme badges */
+.dish-badge.badge-spicy {
+  background-color: var(--brand-red);
+  color: white;
+}
+
+.dish-badge.badge-veggie {
+  background-color: var(--brand-cyan);
+  color: #05080e;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.3);
 }
 
 .menu-card-info {
-  padding: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1251,27 +1430,29 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  gap: 8px;
 }
 
 .dish-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
   color: var(--brand-white);
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .dish-price {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--brand-yellow);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--brand-gold);
+  text-shadow: 0 0 10px rgba(255, 184, 0, 0.2);
 }
 
 .dish-description {
-  font-size: 11px;
-  color: #aaa;
-  line-height: 1.5;
-  margin-bottom: 16px;
+  font-size: 12px;
+  color: #a0aec0;
+  line-height: 1.55;
+  margin-bottom: 0;
   flex: 1;
 }
 
@@ -1506,36 +1687,45 @@ body {
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  border-color: var(--brand-red);
-  background-color: #202020;
+  border-color: var(--brand-gold);
+  background-color: var(--brand-blue-hover);
+  box-shadow: 0 0 8px rgba(255, 184, 0, 0.15);
+  outline: none;
 }
 
 .error-msg {
-  font-size: 9px;
-  color: #ff3b30;
-  margin-top: 2px;
+  font-size: 10px;
+  color: #ff4d4d;
+  margin-top: 4px;
   display: none;
+  font-weight: 500;
 }
 
 .btn-form-submit {
   width: 100%;
-  background-color: var(--brand-yellow);
-  color: var(--brand-charcoal);
+  background: linear-gradient(135deg, var(--brand-gold) 0%, #d49500 100%);
+  color: #05080e;
   font-weight: 800;
   text-transform: uppercase;
-  padding: 10px 0;
+  padding: 12px 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
   font-size: 11px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
   margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(255, 184, 0, 0.2);
 }
 
 .btn-form-submit:hover {
-  background-color: var(--brand-yellow-hover);
-  box-shadow: 0 4px 12px rgba(255, 199, 44, 0.2);
+  background: linear-gradient(135deg, #ffc425 0%, var(--brand-gold) 100%);
+  box-shadow: 0 6px 16px rgba(255, 184, 0, 0.35), 0 0 10px rgba(255, 184, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn-form-submit:active {
+  transform: translateY(0) scale(0.97);
 }
 
 /* Form Success Modal overlay */
@@ -1545,8 +1735,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(18, 18, 18, 0.95);
-  backdrop-filter: blur(8px);
+  background-color: rgba(5, 8, 14, 0.96);
+  backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1563,84 +1753,118 @@ body {
 }
 
 .success-content {
-  text-align: center;
+  background-color: #0b1523;
+  border: 1px solid var(--brand-border);
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a diagonal red-white-blue stripe accent at the corner of the receipt */
+.success-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 8px;
+  background: var(--stripe-pattern);
+  transform: rotate(45deg) translate(20px, -15px);
 }
 
 .success-icon {
-  font-size: 32px;
-  color: #2e7559;
-  margin-bottom: 8px;
+  font-size: 38px;
+  color: var(--brand-gold);
+  margin-bottom: 12px;
+  text-shadow: 0 0 15px rgba(255, 184, 0, 0.4);
 }
 
 .success-content h3 {
-  font-size: 16px;
-  font-weight: 800;
-  color: white;
-  border: none;
-  margin-bottom: 4px;
-  padding: 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--brand-white);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
 }
 
 .success-content p {
   font-size: 11px;
-  color: #ccc;
-  margin-bottom: 12px;
+  color: #a0aec0;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 .form-data-preview {
-  background-color: #121212;
-  border: 1px solid #222;
-  border-radius: 4px;
+  background-color: #05080e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   text-align: left;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .form-data-preview h5 {
-  font-size: 9px;
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--figma-text-secondary);
-  margin-bottom: 6px;
-  letter-spacing: 0.5px;
+  color: var(--brand-gold);
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
 }
 
 .form-data-preview pre {
-  font-family: monospace;
-  font-size: 9px;
-  color: #a259ff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  color: #00f0ff;
   white-space: pre-wrap;
   word-break: break-all;
+  line-height: 1.4;
 }
 
 .backend-notice {
-  font-size: 9px;
-  color: #bbb;
+  font-size: 10px;
+  color: #718096;
   display: flex;
   align-items: center;
-  gap: 4px;
-  margin-bottom: 12px;
+  gap: 6px;
+  margin-bottom: 16px;
 }
 
 .btn-success-close {
-  background-color: transparent;
-  color: #ddd;
-  border: 1px solid #444;
-  padding: 6px 16px;
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 600;
+  background-color: var(--brand-red);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  width: 100%;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(223, 31, 38, 0.2);
 }
 
 .btn-success-close:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: white;
+  background-color: var(--brand-red-hover);
+  box-shadow: 0 6px 16px rgba(223, 31, 38, 0.35);
+  transform: scale(1.02);
+}
+
+.btn-success-close:active {
+  transform: scale(0.98);
 }
 
 /* 6. FOOTER */
