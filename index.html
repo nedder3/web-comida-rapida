@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figma - Trabajo Web BoysBurger</title>
+  <!-- Google Fonts: Outfit for dynamic, bold modern headings and body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome Icons for UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ================= FIGMA INTERFACE SHELL ================= -->
+  <div id="figma-shell">
+    
+    <!-- Top Editor Header Bar -->
+    <header id="figma-topbar">
+      <div class="topbar-left">
+        <div class="figma-logo-icon">
+          <!-- Figma Logo SVG -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 6C12 7.65685 10.6569 9 9 9C7.34315 9 6 7.65685 6 6C6 4.34315 7.34315 3 9 3C10.6569 3 12 4.34315 12 6Z" fill="#F24E1E"/>
+            <path d="M18 6C18 7.65685 16.6569 9 15 9C13.3431 9 12 7.65685 12 6C12 4.34315 13.3431 3 15 3C16.6569 3 18 4.34315 18 6Z" fill="#FF7262"/>
+            <path d="M12 12C12 13.6569 10.6569 15 9 15C7.34315 15 6 13.6569 6 12C6 10.3431 7.34315 9 9 9C10.6569 9 12 10.3431 12 12Z" fill="#A259FF"/>
+            <path d="M6 18C6 16.3431 7.34315 15 9 15C10.6569 15 12 16.3431 12 18C12 19.6569 10.6569 21 9 21C7.34315 21 6 19.6569 6 18Z" fill="#1ABC9C"/>
+            <path d="M18 12C18 13.6569 16.6569 15 15 15C13.3431 15 12 13.6569 12 12C12 10.3431 13.3431 9 15 9C16.6569 9 18 10.3431 18 12Z" fill="#19BCFE"/>
+          </svg>
+        </div>
+        <div class="file-info">
+          <span class="file-name" id="file-title">Trabajo Web - BoysBurger® (Fast Food)</span>
+          <span class="file-status">Borrador</span>
+        </div>
+      </div>
+      
+      <div class="topbar-center">
+        <!-- Figma toolbar shortcuts -->
+        <button class="tool-btn active" title="Mover (V)"><i class="fa-solid fa-arrow-pointer"></i></button>
+        <button class="tool-btn" title="Frame (F)"><i class="fa-solid fa-crop-simple"></i></button>
+        <button class="tool-btn" title="Rectángulo (R)"><i class="fa-regular fa-square"></i></button>
+        <button class="tool-btn" title="Elipse (O)"><i class="fa-regular fa-circle"></i></button>
+        <button class="tool-btn" title="Texto (T)"><i class="fa-solid fa-font"></i></button>
+        <button class="tool-btn" title="Comentarios (C)"><i class="fa-regular fa-comment"></i></button>
+      </div>
+
+      <div class="topbar-right">
+        <button class="share-btn">Compartir</button>
+        <button class="play-btn" id="present-mode-btn" title="Presentar prototipo en pantalla completa">
+          <i class="fa-solid fa-play"></i> Presentar
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace Area -->
+    <div id="figma-workspace">
+      
+      <!-- Left Navigation & Layers Panel -->
+      <aside id="figma-leftpanel">
+        
+        <!-- Pages Section -->
+        <div class="panel-section">
+          <div class="section-header">
+            <span>Páginas</span>
+            <i class="fa-solid fa-plus icon-btn"></i>
+          </div>
+          <ul class="pages-list" id="pages-list-ul">
+            <li class="page-item active" data-page="1">
+              <i class="fa-regular fa-file"></i> Investigación y Concepto
+            </li>
+            <li class="page-item" data-page="2">
+              <i class="fa-regular fa-file"></i> Sistema de Diseño
+            </li>
+            <li class="page-item" data-page="3">
+              <i class="fa-regular fa-file"></i> Prototipo
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Layers Section -->
+        <div class="panel-section layers-section">
+          <div class="section-header">
+            <span>Capas</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          
+          <!-- Layers for Page 1 -->
+          <ul class="layers-list active" id="layers-page-1">
+            <li class="layer-item" data-target="frame-moodboard">
+              <i class="fa-solid fa-crop-simple text-purple"></i> # Moodboard Inspiración
+            </li>
+            <li class="layer-item" data-target="frame-target">
+              <i class="fa-solid fa-crop-simple text-purple"></i> # Público Objetivo
+            </li>
+          </ul>
+
+          <!-- Layers for Page 2 -->
+          <ul class="layers-list" id="layers-page-2">
+            <li class="layer-item" data-target="frame-colors">
+              <i class="fa-solid fa-crop-simple text-purple"></i> # Paleta de Colores
+            </li>
+            <li class="layer-item" data-target="frame-typography">
+              <i class="fa-solid fa-crop-simple text-purple"></i> # Tipografías de Marca
+            </li>
+            <li class="layer-item" data-target="frame-buttons">
+              <i class="fa-solid fa-crop-simple text-purple"></i> # Componentes de Botones
+            </li>
+          </ul>
+
+          <!-- Layers for Page 3 -->
+          <ul class="layers-list" id="layers-page-3">
+            <li class="layer-item" data-target="frame-prototype-landing">
+              <i class="fa-solid fa-crop-simple text-purple"></i> # Landing Page - BoysBurger
+              <ul class="sub-layers">
+                <li><i class="fa-solid fa-layer-group text-blue"></i> Encabezado (Header)</li>
+                <li><i class="fa-solid fa-layer-group text-blue"></i> Banner Inicio (Hero)</li>
+                <li><i class="fa-solid fa-layer-group text-blue"></i> Menú de Combos</li>
+                <li><i class="fa-solid fa-layer-group text-blue"></i> Nuestra Historia</li>
+                <li><i class="fa-solid fa-layer-group text-blue"></i> Pedidos y Contacto</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel-section help-hint-section">
+          <p class="hint-title"><i class="fa-regular fa-lightbulb"></i> Tip de Figma</p>
+          <p class="hint-text">Haz clic en los colores, tipografías o buyer personas en el lienzo para ver su justificación teórica en el panel de la derecha.</p>
+        </div>
+      </aside>
+
+      <!-- Center Design Canvas -->
+      <main id="figma-canvas" class="grid-bg">
+        
+        <!-- ================= FIGMA CANVAS - PAGINA 1: INVESTIGACIÓN ================= -->
+        <div class="canvas-page active" id="canvas-page-1">
+          
+          <!-- Frame: Moodboard -->
+          <div class="figma-frame select-target" id="frame-moodboard" tabindex="0">
+            <div class="frame-label"># Moodboard Concepto Visual</div>
+            <div class="frame-content">
+              
+              <div class="moodboard-container">
+                <div class="moodboard-header">
+                  <h3>BoysBurger®</h3>
+                  <p class="concept-tagline">Estética: Vibrante, Enérgica, Moderna y Juvenil</p>
+                </div>
+                
+                <div class="moodboard-grid-custom">
+                  <div class="moodboard-images-collage">
+                    <div class="collage-img-wrap span-2">
+                      <img src="theboys_img.svg" alt="The Boys Logo" class="collage-img">
+                    </div>
+                    <div class="collage-img-wrap">
+                      <img src="wendys_img.jpeg" alt="Wendy's Inspiración" class="collage-img">
+                    </div>
+                    <div class="collage-img-wrap">
+                      <img src="kentuckys_img.jpg" alt="KFC Inspiración" class="collage-img">
+                    </div>
+                  </div>
+                  
+                  <div class="moodboard-details">
+                    <h4>Dirección de Arte de Comida Rápida</h4>
+                    <p>La propuesta artística de <strong>BoysBurger</strong> se sostiene sobre pilares de alto impacto visual:</p>
+                    <ul>
+                      <li><strong>Fuego & Velocidad:</strong> Tonos de rojo pasión que aceleran el pulso y estimulan la sensación de apetito inmediato.</li>
+                      <li><strong>Juventud & Diversión:</strong> Acentos amarillos brillantes que recuerdan a la mostaza, el queso derretido y la calidez del servicio rápido.</li>
+                      <li><strong>Brutalismo Moderno:</strong> Fondos oscuros de carbón y tipografías enérgicas que conectan con la cultura popular y le dan un aspecto premium a la comida rápida.</li>
+                    </ul>
+                    <div class="aesthetic-chips">
+                      <span class="chip">#ComidaRápidaVibrante</span>
+                      <span class="chip">#BrandingDeImpacto</span>
+                      <span class="chip">#ApetitoVisual</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Frame: Público Objetivo -->
+          <div class="figma-frame select-target" id="frame-target" tabindex="0">
+            <div class="frame-label"># Público Objetivo (Buyer Personas de The Boys)</div>
+            <div class="frame-content">
+              
+              <div class="personas-layout">
+                <div class="personas-grid">
+                  
+                  <!-- Persona 1: Homelander -->
+                  <div class="persona-card" 
+                       data-persona-name="Homelander (El Patriota)"
+                       data-persona-role="Consumidor de Estatus / Egotista"
+                       data-persona-behavior="Busca combos de tamaño masivo, ingredientes premium y un empaque imponente que le haga sentir superior. Detesta hacer filas y exige un servicio extremadamente rápido."
+                       data-persona-pain="Fricción en tiempos de entrega y porciones pequeñas que no coinciden con la publicidad."
+                       data-persona-target="Combo Patria (Triple Burger con bacon y cheddar extra para la máxima porción de energía).">
+                    <div class="persona-header">
+                      <div class="persona-avatar">
+                        <img src="homelander_img.jpg" alt="Homelander" class="persona-avatar-img">
+                      </div>
+                      <div class="persona-title">
+                        <h3>Homelander</h3>
+                        <p class="persona-subtitle">Consumidor de Estatus • Egotista</p>
+                      </div>
+                    </div>
+                    <div class="persona-body">
+                      <p class="persona-desc">"Quiero la hamburguesa más grande, potente y perfecta de la carta. No tolero esperas."</p>
+                    </div>
+                  </div>
+
+                  <!-- Persona 2: Billy Butcher -->
+                  <div class="persona-card" 
+                       data-persona-name="Billy Butcher (El Carnicero)"
+                       data-persona-role="Consumidor Rústico / Tradicional"
+                       data-persona-behavior="Prioriza la carne sazonada, ingredientes fuertes y picantes como jalapeños, y no le importan los empaques bonitos. Valora el sabor auténtico a las brasas."
+                       data-persona-pain="Precios inflados en hamburguesas gourmet pretenciosas con poca cantidad de carne real."
+                       data-persona-target="Combo Carnicero (Doble hamburguesa a la parrilla con jalapeños picantes y cebolla caramelizada).">
+                    <div class="persona-header">
+                      <div class="persona-avatar">
+                        <img src="butcher_img.webp" alt="Butcher" class="persona-avatar-img">
+                      </div>
+                      <div class="persona-title">
+                        <h3>Billy Butcher</h3>
+                        <p class="persona-subtitle">Consumidor Rústico • Sabores Fuertes</p>
+                      </div>
+                    </div>
+                    <div class="persona-body">
+                      <p class="persona-desc">"Dame carne de verdad, picante y papas rústicas crujientes. Nada de tonterías gourmet."</p>
+                    </div>
+                  </div>
+
+                  <!-- Persona 3: Starlight -->
+                  <div class="persona-card" 
+                       data-persona-name="Starlight (Annie)"
+                       data-persona-role="Consumidor Saludable / Vegetariano"
+                       data-persona-behavior="Busca opciones más livianas, wraps o hamburguesas plant-based con vegetales frescos. Valora los menús transparentes en alérgenos y la sustentabilidad."
+                       data-persona-pain="Falta de opciones saludables o vegetarianas en las cadenas de comida rápida tradicionales."
+                       data-persona-target="Estrella Veggie (Hamburguesa base de plantas con aguacate fresco y queso vegano).">
+                    <div class="persona-header">
+                      <div class="persona-avatar starlight">
+                        <img src="starlight_img.jpeg" alt="Starlight" class="persona-avatar-img">
+                      </div>
+                      <div class="persona-title">
+                        <h3>Starlight</h3>
+                        <p class="persona-subtitle">Consumidor Saludable • Opción Plant-Based</p>
+                      </div>
+                    </div>
+                    <div class="persona-body">
+                      <p class="persona-desc">"Quiero comer algo rápido pero que sea fresco, saludable y amigable con el planeta."</p>
+                    </div>
+                  </div>
+
+                  <!-- Persona 4: Firecracker -->
+                  <div class="persona-card" 
+                       data-persona-name="Firecracker"
+                       data-persona-role="Consumidor Viral / Influencer"
+                       data-persona-behavior="Busca alimentos altamente visuales, picantes extremos o combinaciones extrañas que pueda compartir en redes sociales y transmisiones. Se mueve por tendencias."
+                       data-persona-pain="Platos con presentación aburrida o estándar que no generan impacto visual ni interacción."
+                       data-persona-target="Alitas Firecracker (Alitas de pollo búfalo ultra picantes con aderezo ranch y papas cargadas).">
+                    <div class="persona-header">
+                      <div class="persona-avatar">
+                        <img src="firecracker_img.jpeg" alt="Firecracker" class="persona-avatar-img">
+                      </div>
+                      <div class="persona-title">
+                        <h3>Firecracker</h3>
+                        <p class="persona-subtitle">Consumidor Viral • Buscador de Retos</p>
+                      </div>
+                    </div>
+                    <div class="persona-body">
+                      <p class="persona-desc">"Busco el combo más picante e instagrameable. Si se ve explosivo, lo compro."</p>
+                    </div>
+                  </div>
+
+                  <!-- Persona 5: Black Noir -->
+                  <div class="persona-card" 
+                       data-persona-name="Black Noir"
+                       data-persona-role="Consumidor Pragmático / Silencioso"
+                       data-persona-behavior="Busca una experiencia de compra rápida y sin fricción. No quiere interactuar con cajeros ni configurar ingredientes. Prefiere pedir directo con un clic."
+                       data-persona-pain="Interfaces de pedidos complejas, formularios largos y exceso de preguntas al comprar."
+                       data-persona-target="Papas Noir (Papas cargadas con cheddar derretido y pimienta negra de compra exprés).">
+                    <div class="persona-header">
+                      <div class="persona-avatar noir">
+                        <img src="blacknoir_img.webp" alt="Black Noir" class="persona-avatar-img">
+                      </div>
+                      <div class="persona-title">
+                        <h3>Black Noir</h3>
+                        <p class="persona-subtitle">Consumidor Exprés • Cero Fricción</p>
+                      </div>
+                    </div>
+                    <div class="persona-body">
+                      <p class="persona-desc">"..." (Prefiere interfaces limpias donde pueda pedir su clásico favorito al instante).</p>
+                    </div>
+                  </div>
+
+                  <!-- Persona 6: Mother's Milk -->
+                  <div class="persona-card" 
+                       data-persona-name="M.M. (Mother's Milk)"
+                       data-persona-role="Consumidor Familiar / Estructurado"
+                       data-persona-behavior="Valora el control de calidad, la higiene del local y los combos familiares estructurados para ahorrar dinero y tiempo. Busca ingredientes confiables y limpios."
+                       data-persona-pain="Páginas web confusas sin desglose claro de ingredientes o combos familiares poco eficientes."
+                       data-persona-target="Combo Familiar M.M. (Dos hamburguesas clásicas con patatas y batidos artesanales equilibrados).">
+                    <div class="persona-header">
+                      <div class="persona-avatar mm">
+                        <img src="mothersmilk_img.jpeg" alt="M.M." class="persona-avatar-img">
+                      </div>
+                      <div class="persona-title">
+                        <h3>M.M.</h3>
+                        <p class="persona-subtitle">Consumidor Familiar • Control de Calidad</p>
+                      </div>
+                    </div>
+                    <div class="persona-body">
+                      <p class="persona-desc">"Busco calidad garantizada, información clara y un combo equilibrado para mi familia."</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= FIGMA CANVAS - PAGINA 2: SISTEMA DE DISEÑO ================= -->
+        <div class="canvas-page" id="canvas-page-2">
+          
+          <!-- Frame: Paleta de Colores -->
+          <div class="figma-frame select-target" id="frame-colors" tabindex="0">
+            <div class="frame-label"># Paleta de Colores (Psicología del Color)</div>
+            <div class="frame-content">
+              <div class="design-system-card">
+                <h3>Colores BoysBurger</h3>
+                <p class="ds-subtitle">Paleta cromática cálida diseñada bajo principios de neuromarketing gastronómico.</p>
+                
+                <div class="colors-grid">
+                  <!-- Color 1: Rojo -->
+                  <div class="color-item-wrap select-color" 
+                       data-color-name="Vought Red (Primario)" 
+                       data-color-hex="#D12630" 
+                       data-color-use="Elegimos esta paleta cálida porque, según la psicología del color, el rojo estimula el ritmo cardíaco, despierta el apetito y transmite la energía e inmediatez del fast-food. Usado en CTAs principales y botones de compra.">
+                    <div class="color-circle" style="background-color: #d12630;"></div>
+                    <span class="color-hex">#D12630</span>
+                    <span class="color-label">Vought Red</span>
+                  </div>
+                  <!-- Color 2: Amarillo -->
+                  <div class="color-item-wrap select-color" 
+                       data-color-name="Mustard Yellow (Acento)" 
+                       data-color-hex="#FFC72C" 
+                       data-color-use="El amarillo mostaza aporta optimismo, juventud y dinamismo. Llama la atención de inmediato y se asocia al queso derretido y aderezos. Usado para destacar precios, insignias y promociones virales.">
+                    <div class="color-circle" style="background-color: #ffc72c;"></div>
+                    <span class="color-hex">#FFC72C</span>
+                    <span class="color-label">Mustard Yellow</span>
+                  </div>
+                  <!-- Color 3: Carbón -->
+                  <div class="color-item-wrap select-color" 
+                       data-color-name="Noir Charcoal (Fondo)" 
+                       data-color-hex="#121212" 
+                       data-color-use="Aporta la sofisticación del concepto de 'brutalismo moderno'. Posiciona a la marca como una opción premium dentro del sector fast-food, creando un contraste espectacular con el rojo y amarillo.">
+                    <div class="color-circle" style="background-color: #121212; border: 1px solid #333;"></div>
+                    <span class="color-hex">#121212</span>
+                    <span class="color-label">Noir Charcoal</span>
+                  </div>
+                  <!-- Color 4: Blanco Off-White -->
+                  <div class="color-item-wrap select-color" 
+                       data-color-name="Pure Contrast (Texto/Bordes)" 
+                       data-color-hex="#FFFFFF" 
+                       data-color-use="Utilizado para la legibilidad máxima en descripciones de productos y elementos activos. Brinda una lectura limpia sin cansar la vista en pantallas móviles.">
+                    <div class="color-circle" style="background-color: #ffffff; border: 1px solid #ddd;"></div>
+                    <span class="color-hex">#FFFFFF</span>
+                    <span class="color-label">Off-White</span>
+                  </div>
+                </div>
+                <p class="click-note"><i class="fa-solid fa-info-circle"></i> Haz clic en un color para inspeccionar su justificación teórica en el panel derecho.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frame: Tipografías -->
+          <div class="figma-frame select-target" id="frame-typography" tabindex="0">
+            <div class="frame-label"># Estilos de Tipografías (Jerarquía UI)</div>
+            <div class="frame-content">
+              <div class="design-system-card">
+                <h3>Tipografías del Sistema</h3>
+                <p class="ds-subtitle">Combinación tipográfica estructurada para lograr máxima legibilidad y atracción.</p>
+                
+                <div class="typography-list">
+                  <!-- Font 1: H1 -->
+                  <div class="typo-item select-typo" 
+                       data-font="Outfit (Black 900)" 
+                       data-weight="Extra Bold / Heavy (900)" 
+                       data-size="38px" 
+                       data-lineheight="1.1" 
+                       data-use="Usamos una tipografía tipográfica robusta y con muchísima personalidad para los títulos principales para captar la atención del usuario en menos de 3 segundos, simulando la estética de cartelería de comida rápida.">
+                    <div class="typo-preview" style="font-size: 28px; font-weight: 900; color: #fff;">
+                      H1: OUTFIT EXTRA BOLD 900
+                    </div>
+                    <div class="typo-meta">Outfit • Black 900 • 38px / LH 1.1</div>
+                  </div>
+                  
+                  <!-- Font 2: H2 -->
+                  <div class="typo-item select-typo" 
+                       data-font="Outfit (Bold 700)" 
+                       data-weight="Bold (700)" 
+                       data-size="26px" 
+                       data-lineheight="1.2" 
+                       data-use="Usada para títulos secundarios y secciones en el Menú. Establece una clara jerarquía visual y divide la información de forma escaneable para el usuario que tiene prisa.">
+                    <div class="typo-preview" style="font-size: 20px; font-weight: 700; color: #fff;">
+                      H2: Outfit Bold 700
+                    </div>
+                    <div class="typo-meta">Outfit • Bold 700 • 26px / LH 1.2</div>
+                  </div>
+                  
+                  <!-- Font 3: Body -->
+                  <div class="typo-item select-typo" 
+                       data-font="Outfit (Regular 400)" 
+                       data-weight="Regular (400)" 
+                       data-size="13px" 
+                       data-lineheight="1.6" 
+                       data-use="Para los precios y descripciones de las hamburguesas, usamos una tipografía Sans-Serif sin decoraciones muy limpia, garantizando que el cliente lea los ingredientes sin esfuerzo desde cualquier celular y acelere su decisión de compra.">
+                    <div class="typo-preview" style="font-size: 13px; font-weight: 400; color: #ccc; max-width: 500px;">
+                      Cuerpo: Outfit Regular. Doble medallón de carne de res fresca, queso cheddar fundido y panceta ahumada crujiente.
+                    </div>
+                    <div class="typo-meta">Outfit • Regular 400 • 13px / LH 1.6</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frame: Botones -->
+          <div class="figma-frame select-target" id="frame-buttons" tabindex="0">
+            <div class="frame-label"># Componentes: Botón Principal (CTA)</div>
+            <div class="frame-content">
+              <div class="design-system-card">
+                <h3>Variantes de Botón Primario</h3>
+                <p class="ds-subtitle">Comportamiento interactivo del botón principal optimizado para conversión comercial.</p>
+                
+                <div class="buttons-matrix">
+                  <!-- Row Header -->
+                  <div class="matrix-row headers">
+                    <div>Estado</div>
+                    <div>Visualización en Canvas</div>
+                    <div>Propiedades CSS</div>
+                  </div>
+                  
+                  <!-- State: Default -->
+                  <div class="matrix-row select-btn-state" 
+                       data-state="Default" 
+                       data-bg="#D12630 (Vought Red)" 
+                       data-color="#FFFFFF" 
+                       data-shadow="Ninguna"
+                       data-use="El botón de llamado a la acción (CTA) está en un color rojo vibrante altamente contrastante sobre el fondo negro. Su objetivo es canalizar la urgencia de compra y guiar al usuario directo a realizar el pedido.">
+                    <div class="state-name">Default</div>
+                    <div>
+                      <button class="btn-demo default">Pedir Combo</button>
+                    </div>
+                    <div class="css-desc"><code>background: #d12630; color: #fff;</code></div>
+                  </div>
+                  
+                  <!-- State: Hover -->
+                  <div class="matrix-row select-btn-state" 
+                       data-state="Hover" 
+                       data-bg="#B01D25 (Red Darker)" 
+                       data-color="#FFFFFF" 
+                       data-shadow="0 4px 10px rgba(209, 38, 48, 0.3)"
+                       data-use="Micro-animación en hover: Oscurece levemente el fondo y añade una sombra difusa roja para dar retroalimentación visual al usuario, confirmando que el botón es interactivo y clicable.">
+                    <div class="state-name">Hover</div>
+                    <div>
+                      <button class="btn-demo hover">Pedir Combo</button>
+                    </div>
+                    <div class="css-desc"><code>background: #b01d25; box-shadow: red;</code></div>
+                  </div>
+                  
+                  <!-- State: Pressed -->
+                  <div class="matrix-row select-btn-state" 
+                       data-state="Pressed" 
+                       data-bg="#8C131A" 
+                       data-color="#FFFFFF" 
+                       data-shadow="Ninguna (se reduce escala)"
+                       data-use="Efecto activo: Escala reducida a 0.96 y color rojo oscuro, simulando el hundimiento físico de un botón real para dar una sensación táctil inmediata en dispositivos móviles.">
+                    <div class="state-name">Pressed</div>
+                    <div>
+                      <button class="btn-demo pressed">Pedir Combo</button>
+                    </div>
+                    <div class="css-desc"><code>transform: scale(0.96); background: #8c131a;</code></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= FIGMA CANVAS - PAGINA 3: PROTOTIPO VIEW ================= -->
+        <div class="canvas-page" id="canvas-page-3">
+          
+          <div class="figma-frame select-target" id="frame-prototype-landing" tabindex="0">
+            <div class="frame-label">
+              <span># Prototipo Interactivo (Landing Page)</span>
+              <span class="hint-badge"><i class="fa-solid fa-expand"></i> Clic en "Presentar" arriba a la derecha para ver en pantalla completa</span>
+            </div>
+            <div class="frame-content prototype-scale-wrapper">
+              
+              <!-- ================= THE LANDING PAGE CONTENT ================= -->
+              <div id="live-landing-page" class="landing-page-root">
+                
+                <!-- 1. ENCABEZADO (HEADER) -->
+                <header class="restaurant-header">
+                  <div class="header-container">
+                    <a href="#inicio" class="restaurant-logo">BOYS<span class="logo-accent">BURGER</span></a>
+                    <nav class="restaurant-nav">
+                      <ul>
+                        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                        <li><a href="#menu" class="nav-link">Menú</a></li>
+                        <li><a href="#historia" class="nav-link">Historia</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                      </ul>
+                    </nav>
+                    <a href="#contacto" class="header-cta-btn">Pedir Online</a>
+                  </div>
+                </header>
+
+                <!-- 2. BANNER INICIO (HERO) -->
+                <section id="inicio" class="hero-section">
+                  <div class="hero-container">
+                    <div class="hero-text-content">
+                      <span class="hero-tagline">100% Carne Fresca a la Brasa</span>
+                      <h1 class="hero-title">Hamburguesas tan potentes que te salvarán el día</h1>
+                      <p class="hero-description">
+                        En <strong>BoysBurger®</strong> rompemos las reglas del fast-food convencional. Elaboramos nuestras hamburguesas con carne vacuna fresca de primera calidad (nunca congelada), queso cheddar real y salsas caseras explosivas. ¡Elige tu combo y experimenta el verdadero sabor del poder!
+                      </p>
+                      <div class="hero-actions">
+                        <a href="#menu" class="btn-primary">Ver Combos</a>
+                        <a href="#historia" class="btn-secondary">Nuestra Historia</a>
+                      </div>
+                    </div>
+                    <div class="hero-image-wrap">
+                      <img src="Bigdaddys_img.jpg" alt="Hamburguesa BoysBurger masiva" class="hero-image">
+                    </div>
+                  </div>
+                </section>
+
+                <!-- 3. SECCIÓN MENÚ -->
+                <section id="menu" class="menu-section">
+                  <div class="section-container">
+                    <div class="section-title-wrap">
+                      <span class="section-tag">Nuestras Especialidades</span>
+                      <h2 class="section-title">Elige tu Nivel de Sabor</h2>
+                      <div class="section-line"></div>
+                    </div>
+
+                    <!-- Filter chips -->
+                    <div class="menu-filters">
+                      <button class="filter-btn active" data-filter="all">Todos</button>
+                      <button class="filter-btn" data-filter="combos">Combos</button>
+                      <button class="filter-btn" data-filter="burgers">Burgers</button>
+                      <button class="filter-btn" data-filter="sides-drinks">Extras & Alitas</button>
+                    </div>
+
+                    <!-- List of Dishes with details & pricing -->
+                    <div class="menu-grid">
+                      
+                      <!-- Combos: Homelander -->
+                      <article class="menu-card" data-category="combos">
+                        <div class="menu-card-img-wrap">
+                          <img src="Bigdaddys_img.jpg" alt="Combo Patria" class="menu-card-img">
+                          <span class="dish-category">Combo</span>
+                          <span class="dish-badge">Popular 🔥</span>
+                        </div>
+                        <div class="menu-card-info">
+                          <div class="menu-card-header">
+                            <h3 class="dish-title">Combo Patria (Homelander Triple)</h3>
+                            <span class="dish-price">$18</span>
+                          </div>
+                          <p class="dish-description">
+                            Tres medallones de carne fresca a la parrilla, triple queso cheddar fundido, panceta ahumada crujiente, cebolla crujiente y nuestra emblemática salsa Vought. Incluye papas grandes y refresco.
+                          </p>
+                        </div>
+                      </article>
+
+                      <!-- Combos: Butcher -->
+                      <article class="menu-card" data-category="combos">
+                        <div class="menu-card-img-wrap">
+                          <img src="wendys_img.jpeg" alt="Combo Carnicero" class="menu-card-img">
+                          <span class="dish-category">Combo</span>
+                          <span class="dish-badge">Spicy 🌶️</span>
+                        </div>
+                        <div class="menu-card-info">
+                          <div class="menu-card-header">
+                            <h3 class="dish-title">Combo Carnicero (The Butcher Double)</h3>
+                            <span class="dish-price">$16</span>
+                          </div>
+                          <p class="dish-description">
+                            Doble medallón de carne vacuna, queso cheddar, rodajas de jalapeño asado, cebolla morada caramelizada y aderezo especial de barbacoa picante. Viene con patatas rústicas crujientes.
+                          </p>
+                        </div>
+                      </article>
+
+                      <!-- Burgers: Starlight veggie -->
+                      <article class="menu-card" data-category="burgers">
+                        <div class="menu-card-img-wrap">
+                          <img src="Bigdaddys_img.jpg" alt="Estrella Veggie" class="menu-card-img">
+                          <span class="dish-category">Burger</span>
+                          <span class="dish-badge">Veggie 🌱</span>
+                        </div>
+                        <div class="menu-card-info">
+                          <div class="menu-card-header">
+                            <h3 class="dish-title">Estrella Veggie (Starlight Burger)</h3>
+                            <span class="dish-price">$12</span>
+                          </div>
+                          <p class="dish-description">
+                            Medallón crujiente a base de plantas, lechuga hidropónica, rodajas de aguacate fresco, tomates orgánicos reliquia y mayonesa vegana en pan de papa tostado. Sin TACC (apto celíacos).
+                          </p>
+                        </div>
+                      </article>
+
+                      <!-- Sides: Firecracker Wings -->
+                      <article class="menu-card" data-category="sides-drinks">
+                        <div class="menu-card-img-wrap">
+                          <img src="kfc_img_1.webp" alt="Alitas Firecracker" class="menu-card-img">
+                          <span class="dish-category">Alitas</span>
+                          <span class="dish-badge">Explosiva 💥</span>
+                        </div>
+                        <div class="menu-card-info">
+                          <div class="menu-card-header">
+                            <h3 class="dish-title">Alitas Firecracker</h3>
+                            <span class="dish-price">$10</span>
+                          </div>
+                          <p class="dish-description">
+                            8 alitas de pollo súper crujientes glaseadas en salsa búfalo ultra picante (desafío picante), servidas con bastones de apio fresco y aderezo ranchero para enfriar el paladar.
+                          </p>
+                        </div>
+                      </article>
+
+                      <!-- Sides: Papas Noir -->
+                      <article class="menu-card" data-category="sides-drinks">
+                        <div class="menu-card-img-wrap">
+                          <img src="kentuckys_img.jpg" alt="Papas Noir" class="menu-card-img">
+                          <span class="dish-category">Papas</span>
+                        </div>
+                        <div class="menu-card-info">
+                          <div class="menu-card-header">
+                            <h3 class="dish-title">Papas Noir (Loaded Fries)</h3>
+                            <span class="dish-price">$8</span>
+                          </div>
+                          <p class="dish-description">
+                            Papas fritas cortadas a mano, doblemente fritas para la máxima crocantez, bañadas en salsa de queso cheddar fundido y espolvoreadas con pimienta negra recién molida y cebollino fresco.
+                          </p>
+                        </div>
+                      </article>
+
+                      <!-- Combos: Family Combo M.M. -->
+                      <article class="menu-card" data-category="combos">
+                        <div class="menu-card-img-wrap">
+                          <img src="wendys_img.jpeg" alt="Combo Familiar M.M." class="menu-card-img">
+                          <span class="dish-category">Combo</span>
+                          <span class="dish-badge">Familiar 👨‍👩‍👧‍👦</span>
+                        </div>
+                        <div class="menu-card-info">
+                          <div class="menu-card-header">
+                            <h3 class="dish-title">Combo Familiar M.M. (Calidad 100%)</h3>
+                            <span class="dish-price">$30</span>
+                          </div>
+                          <p class="dish-description">
+                            El combo familiar estructurado perfecto: 2 hamburguesas clásicas con queso, 1 porción familiar de papas fritas crujientes, 1 porción de nuggets de pollo crujientes y 2 batidos tradicionales.
+                          </p>
+                        </div>
+                      </article>
+
+                    </div>
+                  </div>
+                </section>
+
+                <!-- 4. SECCIÓN NUESTRA HISTORIA -->
+                <section id="historia" class="history-section">
+                  <div class="history-container">
+                    <div class="history-image-wrap">
+                      <img src="kentuckys_img.jpg" alt="BoysBurger Local" class="history-image">
+                    </div>
+                    <div class="history-text-content">
+                      <span class="section-tag">Hecho con Rebelión</span>
+                      <h2 class="section-title">El Origen de la Hamburguesa Real</h2>
+                      <div class="section-line left"></div>
+                      <p class="history-paragraph">
+                        BoysBurger® nació del cansancio. Estábamos cansados de las hamburguesas de plástico, congeladas hace meses y envueltas en mentiras corporativas. Decidimos rebelarnos contra el sistema de comida rápida masiva y crear un lugar donde la comida se haga con respeto, frescura y sabor explosivo.
+                      </p>
+                      <p class="history-paragraph">
+                        Usamos carne de res de campos locales que se procesa a diario. No tenemos freezers gigantes para congelar carnes, solo heladeras para mantener la frescura del día. Creemos que la velocidad no debe sacrificar la calidad real.
+                      </p>
+                      <div class="history-stats">
+                        <div class="stat-item">
+                          <span class="stat-num">0%</span>
+                          <span class="stat-lbl">Carne Congelada</span>
+                        </div>
+                        <div class="stat-item">
+                          <span class="stat-num">100%</span>
+                          <span class="stat-lbl">Ingredientes Frescos</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- 5. SECCIÓN CONTACTO / PEDIDOS -->
+                <section id="contacto" class="contact-section">
+                  <div class="section-container">
+                    <div class="section-title-wrap">
+                      <span class="section-tag">Haz tu Pedido en Línea</span>
+                      <h2 class="section-title">Preparamos tu Combo en Minutos</h2>
+                      <div class="section-line"></div>
+                    </div>
+
+                    <div class="contact-grid">
+                      <!-- Left column: Details & Social Media -->
+                      <div class="contact-info">
+                        <h3>Contacto Exprés</h3>
+                        <p class="contact-desc">
+                          ¿Quieres hacer un pedido telefónico o necesitas catering de hamburguesas para un evento? Escríbenos o visítanos en nuestra sucursal de Palermo.
+                        </p>
+                        
+                        <div class="contact-detail-items">
+                          <div class="detail-item">
+                            <i class="fa-solid fa-map-location-dot contact-icon"></i>
+                            <div>
+                              <h5>Dirección</h5>
+                              <p>Av. Del Libertador 1824, Palermo, CABA, Argentina</p>
+                            </div>
+                          </div>
+                          
+                          <div class="detail-item">
+                            <i class="fa-solid fa-phone contact-icon"></i>
+                            <div>
+                              <h5>Teléfono de Reservas y Delivery</h5>
+                              <p>+54 11 4872-9900</p>
+                            </div>
+                          </div>
+
+                          <div class="detail-item">
+                            <i class="fa-solid fa-clock contact-icon"></i>
+                            <div>
+                              <h5>Horarios de Cocina</h5>
+                              <p>Todos los días: 11:30 hs a 24:00 hs</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="social-links-wrap">
+                          <h5>Comunidad BoysBurger</h5>
+                          <div class="social-icons">
+                            <a href="https://instagram.com" target="_blank" class="social-icon-link" aria-label="Visitar Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://facebook.com" target="_blank" class="social-icon-link" aria-label="Visitar Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" class="social-icon-link" aria-label="Visitar Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Right column: Interactive form prepared for backend -->
+                      <div class="contact-form-card">
+                        <h3>Solicitar Pedido Take-Away</h3>
+                        
+                        <form id="restaurant-contact-form" novalidate>
+                          <div class="form-row">
+                            <div class="form-group">
+                              <label for="form-name">Nombre Completo</label>
+                              <div class="input-with-icon">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="text" id="form-name" name="name" placeholder="Ej. Juan Pérez" required>
+                              </div>
+                              <span class="error-msg" id="error-name">El nombre debe tener mínimo 3 caracteres.</span>
+                            </div>
+                          </div>
+
+                          <div class="form-row">
+                            <div class="form-group">
+                              <label for="form-email">Correo Electrónico</label>
+                              <div class="input-with-icon">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" id="form-email" name="email" placeholder="Ej. juan@correo.com" required>
+                              </div>
+                              <span class="error-msg" id="error-email">Introduce un correo electrónico válido.</span>
+                            </div>
+                          </div>
+
+                          <div class="form-row">
+                            <div class="form-group">
+                              <label for="form-subject">Selecciona tu Combo</label>
+                              <div class="input-with-icon">
+                                <i class="fa-regular fa-bookmark"></i>
+                                <select id="form-subject" name="subject" required>
+                                  <option value="" disabled selected>Elige una opción</option>
+                                  <option value="Combo Patria (Triple Burger)">Combo Patria (Triple Burger - $18)</option>
+                                  <option value="Combo Carnicero (Double Burger)">Combo Carnicero (Double Burger - $16)</option>
+                                  <option value="Estrella Veggie (Starlight Burger)">Estrella Veggie (Starlight Burger - $12)</option>
+                                  <option value="Alitas Firecracker">Alitas Firecracker ($10)</option>
+                                  <option value="Combo Familiar M.M.">Combo Familiar M.M. ($30)</option>
+                                </select>
+                              </div>
+                              <span class="error-msg" id="error-subject">Por favor selecciona un combo para tu pedido.</span>
+                            </div>
+                          </div>
+
+                          <div class="form-row">
+                            <div class="form-group">
+                              <label for="form-message">Especificaciones de tu pedido</label>
+                              <textarea id="form-message" name="message" rows="3" placeholder="Ej. Sin cebolla, aderezo extra, hora de retiro, etc. (mínimo 10 letras)..." required></textarea>
+                              <span class="error-msg" id="error-message">Escribe detalles sobre tu pedido (mínimo 10 caracteres).</span>
+                            </div>
+                          </div>
+
+                          <button type="submit" class="btn-form-submit">Enviar Pedido</button>
+                        </form>
+
+                        <!-- Glassmorphic Success Overlay -->
+                        <div class="form-success-overlay" id="form-success">
+                          <div class="success-content">
+                            <div class="success-icon">
+                              <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <h3>¡Pedido Registrado con Éxito!</h3>
+                            <p>La validación local de tu pedido se completó.</p>
+                            <div class="form-data-preview">
+                              <h5>Payload listo para API Backend:</h5>
+                              <pre id="form-data-json"></pre>
+                            </div>
+                            <p class="backend-notice"><i class="fa-solid fa-code"></i> Formulario validado con JS. Listo para envío asíncrono.</p>
+                            <button class="btn-success-close" id="btn-success-close">Hacer otro Pedido</button>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- FOOTER -->
+                <footer class="restaurant-footer">
+                  <div class="footer-container">
+                    <p class="copyright">&copy; 2026 BoysBurger® SRL. Todos los derechos reservados. Trabajo Académico de Diseño y Desarrollo Web.</p>
+                    <p class="developer-credit">Diseño y Prototipo justificado para consigna académica en Figma.</p>
+                  </div>
+                </footer>
+
+              </div>
+              <!-- ================= END OF LANDING PAGE CONTENT ================= -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+      <!-- Right Design Properties Sidebar -->
+      <aside id="figma-rightpanel">
+        <div class="rightpanel-tab-headers">
+          <div class="right-tab active">Diseño</div>
+          <div class="right-tab">Prototipo</div>
+        </div>
+
+        <div class="properties-content">
+          
+          <!-- Dynamic State: Default (Canvas settings / UX Justification) -->
+          <div id="prop-default">
+            <h4 class="prop-title">Propiedades del Lienzo</h4>
+            <div class="prop-row">
+              <span class="prop-label">Fondo</span>
+              <code class="code-value">#2C2C2C</code>
+            </div>
+            <div class="prop-row">
+              <span class="prop-label">Resolución</span>
+              <span class="prop-value">Desktop 1920x1080</span>
+            </div>
+            
+            <div class="prop-group" style="margin-top: 20px;">
+              <h4 class="prop-title">Justificación de UX (Negocio)</h4>
+              
+              <div class="prop-row" style="margin-bottom: 12px; display: block;">
+                <span class="prop-label" style="font-weight:600; color:#fff;">El Botón Principal (CTA):</span>
+                <p class="prop-text-desc">"El botón de 'Pedir Online' o 'Ver Combos' está siempre visible y en un color amarillo contrastante. El objetivo de la web es convertir visitas en clientes reales y reducir el abandono."</p>
+                <div class="bg-accent-box">
+                  <span class="prop-label" style="font-size: 10px; color: var(--brand-yellow); font-weight:700;"><i class="fa-solid fa-bullseye"></i> Conversión</span>
+                </div>
+              </div>
+              
+              <div class="prop-row" style="margin-bottom: 12px; display: block;">
+                <span class="prop-label" style="font-weight:600; color:#fff;">La comida primero:</span>
+                <p class="prop-text-desc">"Ubicamos fotos de platos reales y jugosos en alta definición en la cabecera (Hero section) para generar impacto visual inmediato y despertar el deseo de compra apenas se abre la página."</p>
+              </div>
+
+              <div class="prop-row" style="margin-bottom: 12px; display: block;">
+                <span class="prop-label" style="font-weight:600; color:#fff;">Fricción cero:</span>
+                <p class="prop-text-desc">"Diseñamos el menú digital con filtros rápidos (Combos, Burgers, Acompañamientos) para reducir la frustración del usuario, evitar el scroll innecesario y acelerar su decisión de compra."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic State: Color details -->
+          <div id="prop-color-details" class="hidden">
+            <h4 class="prop-title">Estilo de Color</h4>
+            <div class="prop-row">
+              <span class="prop-label">Nombre</span>
+              <span id="prop-color-name" class="prop-value">-</span>
+            </div>
+            <div class="prop-row">
+              <span class="prop-label">Valor HEX</span>
+              <code id="prop-color-hex" class="code-value">-</code>
+            </div>
+            
+            <h4 class="prop-title" style="margin-top: 20px;">Psicología del Color</h4>
+            <p id="prop-color-use" class="prop-text-desc">-</p>
+          </div>
+
+          <!-- Dynamic State: Typography details -->
+          <div id="prop-typo-details" class="hidden">
+            <h4 class="prop-title">Estilo de Texto</h4>
+            <div class="prop-row">
+              <span class="prop-label font">Familia</span>
+              <span id="prop-typo-font" class="prop-value">-</span>
+            </div>
+            <div class="prop-row">
+              <span class="prop-label">Peso</span>
+              <span id="prop-typo-weight" class="prop-value">-</span>
+            </div>
+            <div class="prop-row">
+              <span class="prop-label">Tamaño</span>
+              <span id="prop-typo-size" class="prop-value">-</span>
+            </div>
+            <div class="prop-row">
+              <span class="prop-label">Interlineado</span>
+              <span id="prop-typo-lh" class="prop-value">-</span>
+            </div>
+            
+            <h4 class="prop-title" style="margin-top: 20px;">Jerarquía Visual (UI)</h4>
+            <p id="prop-typo-use" class="prop-text-desc">-</p>
+          </div>
+
+          <!-- Dynamic State: Button Variant details -->
+          <div id="prop-button-details" class="hidden">
+            <h4 class="prop-title">Variante de Botón</h4>
+            <div class="prop-row">
+              <span class="prop-label">Estado</span>
+              <span id="prop-btn-state" class="prop-value">-</span>
+            </div>
+            <div class="prop-row">
+              <span class="prop-label">Fondo</span>
+              <code id="prop-btn-bg" class="code-value">-</code>
+            </div>
+            <div class="prop-row">
+              <span class="prop-label">Color de Texto</span>
+              <code id="prop-btn-color" class="code-value">-</code>
+            </div>
+            <div class="prop-row">
+              <span class="prop-label">Sombra</span>
+              <span id="prop-btn-shadow" class="prop-value" style="font-size: 11px;">-</span>
+            </div>
+            
+            <h4 class="prop-title" style="margin-top: 20px;">Análisis de Interacción</h4>
+            <p id="prop-btn-use" class="prop-text-desc">Micro-interacción diseñada para ofrecer respuesta visual en tiempo real. En dispositivos móviles, la escala y el cambio cromático reducen la percepción de retraso en la carga (latencia táctil).</p>
+          </div>
+
+          <!-- Dynamic State: Buyer Persona details -->
+          <div id="prop-persona-details" class="hidden">
+            <h4 class="prop-title">Ficha de Buyer Persona</h4>
+            <div class="prop-row">
+              <span class="prop-label">Nombre</span>
+              <span id="prop-persona-name" class="prop-value">-</span>
+            </div>
+            <div class="prop-row" style="display:block; margin-bottom:10px;">
+              <span class="prop-label">Rol de Consumidor:</span>
+              <p id="prop-persona-role" class="prop-value" style="font-size:11px; margin-top:2px;">-</p>
+            </div>
+            
+            <div class="prop-group">
+              <h4 class="prop-title">Comportamiento</h4>
+              <p id="prop-persona-behavior" class="prop-text-desc">-</p>
+            </div>
+
+            <div class="prop-group">
+              <h4 class="prop-title">Punto de Dolor (Frustración)</h4>
+              <div class="bg-accent-box" style="border-left-color: var(--brand-red);">
+                <p id="prop-persona-pain" class="prop-text-desc" style="color:#ffcccc; margin:0;">-</p>
+              </div>
+            </div>
+
+            <div class="prop-group">
+              <h4 class="prop-title">Combo Objetivo</h4>
+              <div class="bg-accent-box green">
+                <p id="prop-persona-target" class="prop-text-desc" style="color:#ccffec; margin:0; font-weight:600;">-</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ================= PRESENTATION MODE / PLAY OVERLAY ================= -->
+  <div id="present-overlay" class="hidden">
+    <div id="present-toolbar">
+      <div class="present-toolbar-left">
+        <span class="present-file-name"><i class="fa-solid fa-crop-simple text-purple"></i> Prototipo Interactivo: BoysBurger® (Fast Food)</span>
+        <span class="scale-mode-lbl">Ajustar a pantalla (Desktop)</span>
+      </div>
+      <div class="present-toolbar-right">
+        <button class="restart-flow-btn" id="btn-restart-prototype" title="Reiniciar prototipo (volver a Inicio)">
+          <i class="fa-solid fa-rotate-left"></i> Reiniciar
+        </button>
+        <button class="exit-present-btn" id="btn-exit-present" title="Salir de pantalla completa y volver al lienzo de Figma">
+          <i class="fa-solid fa-xmark"></i> Volver a Figma
+        </button>
+      </div>
+    </div>
+    
+    <!-- Outer screen frame simulation -->
+    <div id="present-viewport-container">
+      <div id="present-browser-chrome">
+        <div class="chrome-dot"></div>
+        <div class="chrome-dot"></div>
+        <div class="chrome-dot"></div>
+        <div class="chrome-address-bar">https://boysburger.vought.com/prototype-preview</div>
+      </div>
+      <div id="present-canvas">
+        <!-- The Landing Page element will be reparented inside here! -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+</body>
+</html>
