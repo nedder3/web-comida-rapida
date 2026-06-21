@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoysBurger® - Investigación y Concepto</title>
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome Icons for UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: var(--figma-bg);
+      overflow-y: auto !important;
+      height: auto !important;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+    }
+    .figma-frame {
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Frame: Moodboard -->
+  <div class="figma-frame" id="frame-moodboard">
+    <div class="frame-label"># Moodboard Concepto Visual</div>
+    <div class="frame-content">
+      
+      <div class="moodboard-container">
+        <div class="moodboard-header">
+          <h3>BoysBurger®</h3>
+          <p class="concept-tagline">Estética: Vibrante, Enérgica, Moderna y Juvenil</p>
+        </div>
+        
+        <div class="moodboard-grid-custom">
+          <div class="moodboard-images-collage">
+            <div class="collage-img-wrap span-2">
+              <img src="theboys_img.svg" alt="The Boys Logo" class="collage-img">
+            </div>
+            <div class="collage-img-wrap">
+              <img src="wendys_img.jpeg" alt="Wendy's Inspiración" class="collage-img">
+            </div>
+            <div class="collage-img-wrap">
+              <img src="kentuckys_img.jpg" alt="KFC Inspiración" class="collage-img">
+            </div>
+          </div>
+          
+          <div class="moodboard-details">
+            <h4>Dirección de Arte de Comida Rápida</h4>
+            <p>La propuesta artística de <strong>BoysBurger</strong> se sostiene sobre pilares de alto impacto visual:</p>
+            <ul>
+              <li><strong>Fuego & Velocidad:</strong> Tonos de rojo pasión que aceleran el pulso y estimulan la sensación de apetito inmediato.</li>
+              <li><strong>Juventud & Diversión:</strong> Acentos amarillos brillantes que recuerdan a la mostaza, el queso derretido y la calidez del servicio rápido.</li>
+              <li><strong>Brutalismo Moderno:</strong> Fondos oscuros de carbón y tipografías enérgicas que le dan un aspecto premium a la comida rápida.</li>
+            </ul>
+            <div class="aesthetic-chips">
+              <span class="chip">#ComidaRápidaVibrante</span>
+              <span class="chip">#BrandingDeImpacto</span>
+              <span class="chip">#ApetitoVisual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Frame: Público Objetivo -->
+  <div class="figma-frame" id="frame-target">
+    <div class="frame-label"># Público Objetivo (Buyer Personas de The Boys)</div>
+    <div class="frame-content">
+      
+      <div class="personas-layout">
+        <div class="personas-grid">
+          
+          <!-- Persona 1: Homelander -->
+          <div class="persona-card">
+            <div class="persona-header">
+              <div class="persona-avatar">
+                <img src="homelander_img.jpg" alt="Homelander" class="persona-avatar-img">
+              </div>
+              <div class="persona-title">
+                <h3>Homelander</h3>
+                <p class="persona-subtitle">Consumidor de Estatus • Egotista</p>
+              </div>
+            </div>
+            <div class="persona-body">
+              <p class="persona-desc">"Quiero la hamburguesa más grande, potente y perfecta de la carta. No tolero esperas."</p>
+            </div>
+          </div>
+
+          <!-- Persona 2: Billy Butcher -->
+          <div class="persona-card">
+            <div class="persona-header">
+              <div class="persona-avatar">
+                <img src="butcher_img.webp" alt="Butcher" class="persona-avatar-img">
+              </div>
+              <div class="persona-title">
+                <h3>Billy Butcher</h3>
+                <p class="persona-subtitle">Consumidor Rústico • Sabores Fuertes</p>
+              </div>
+            </div>
+            <div class="persona-body">
+              <p class="persona-desc">"Dame carne de verdad, picante y papas rústicas crujientes. Nada de tonterías gourmet."</p>
+            </div>
+          </div>
+
+          <!-- Persona 3: Starlight -->
+          <div class="persona-card">
+            <div class="persona-header">
+              <div class="persona-avatar starlight">
+                <img src="starlight_img.jpeg" alt="Starlight" class="persona-avatar-img">
+              </div>
+              <div class="persona-title">
+                <h3>Starlight</h3>
+                <p class="persona-subtitle">Consumidor Saludable • Opción Plant-Based</p>
+              </div>
+            </div>
+            <div class="persona-body">
+              <p class="persona-desc">"Quiero comer algo rápido pero que sea fresco, saludable y amigable con el planeta."</p>
+            </div>
+          </div>
+
+          <!-- Persona 4: Firecracker -->
+          <div class="persona-card">
+            <div class="persona-header">
+              <div class="persona-avatar">
+                <img src="firecracker_img.jpeg" alt="Firecracker" class="persona-avatar-img">
+              </div>
+              <div class="persona-title">
+                <h3>Firecracker</h3>
+                <p class="persona-subtitle">Consumidor Viral • Buscador de Retos</p>
+              </div>
+            </div>
+            <div class="persona-body">
+              <p class="persona-desc">"Busco el combo más picante e instagrameable. Si se ve explosivo, lo compro."</p>
+            </div>
+          </div>
+
+          <!-- Persona 5: Black Noir -->
+          <div class="persona-card">
+            <div class="persona-header">
+              <div class="persona-avatar noir">
+                <img src="blacknoir_img.webp" alt="Black Noir" class="persona-avatar-img">
+              </div>
+              <div class="persona-title">
+                <h3>Black Noir</h3>
+                <p class="persona-subtitle">Consumidor Exprés • Cero Fricción</p>
+              </div>
+            </div>
+            <div class="persona-body">
+              <p class="persona-desc">"..."</p>
+            </div>
+          </div>
+
+          <!-- Persona 6: Mother's Milk -->
+          <div class="persona-card">
+            <div class="persona-header">
+              <div class="persona-avatar mm">
+                <img src="mothersmilk_img.jpeg" alt="M.M." class="persona-avatar-img">
+              </div>
+              <div class="persona-title">
+                <h3>M.M.</h3>
+                <p class="persona-subtitle">Consumidor Familiar • Control de Calidad</p>
+              </div>
+            </div>
+            <div class="persona-body">
+              <p class="persona-desc">"Busco calidad garantizada, información clara y un combo equilibrado para mi familia."</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

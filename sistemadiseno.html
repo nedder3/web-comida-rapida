@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoysBurger® - Sistema de Diseño</title>
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome Icons for UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: var(--figma-bg);
+      overflow-y: auto !important;
+      height: auto !important;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+    }
+    .figma-frame {
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Frame: Paleta de Colores -->
+  <div class="figma-frame" id="frame-colors">
+    <div class="frame-label"># Paleta de Colores (Psicología del Color)</div>
+    <div class="frame-content">
+      <div class="design-system-card">
+        <h3>Colores BoysBurger</h3>
+        <p class="ds-subtitle">Paleta cromática cálida diseñada bajo principios de neuromarketing gastronómico.</p>
+        
+        <div class="colors-grid">
+          <!-- Color 1: Rojo -->
+          <div class="color-item-wrap">
+            <div class="color-circle" style="background-color: #d12630;"></div>
+            <span class="color-hex">#D12630</span>
+            <span class="color-label">Vought Red</span>
+          </div>
+          <!-- Color 2: Amarillo -->
+          <div class="color-item-wrap">
+            <div class="color-circle" style="background-color: #ffc72c;"></div>
+            <span class="color-hex">#FFC72C</span>
+            <span class="color-label">Mustard Yellow</span>
+          </div>
+          <!-- Color 3: Carbón -->
+          <div class="color-item-wrap">
+            <div class="color-circle" style="background-color: #121212; border: 1px solid #333;"></div>
+            <span class="color-hex">#121212</span>
+            <span class="color-label">Noir Charcoal</span>
+          </div>
+          <!-- Color 4: Blanco Off-White -->
+          <div class="color-item-wrap">
+            <div class="color-circle" style="background-color: #ffffff; border: 1px solid #ddd;"></div>
+            <span class="color-hex">#FFFFFF</span>
+            <span class="color-label">Off-White</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frame: Tipografías -->
+  <div class="figma-frame" id="frame-typography">
+    <div class="frame-label"># Estilos de Tipografías (Jerarquía UI)</div>
+    <div class="frame-content">
+      <div class="design-system-card">
+        <h3>Tipografías del Sistema</h3>
+        <p class="ds-subtitle">Combinación tipográfica estructurada para lograr máxima legibilidad y atracción.</p>
+        
+        <div class="typography-list">
+          <!-- Font 1: H1 -->
+          <div class="typo-item">
+            <div class="typo-preview" style="font-size: 28px; font-weight: 900; color: #fff;">
+              H1: OUTFIT EXTRA BOLD 900
+            </div>
+            <div class="typo-meta">Outfit • Black 900 • 38px / LH 1.1</div>
+          </div>
+          
+          <!-- Font 2: H2 -->
+          <div class="typo-item">
+            <div class="typo-preview" style="font-size: 20px; font-weight: 700; color: #fff;">
+              H2: Outfit Bold 700
+            </div>
+            <div class="typo-meta">Outfit • Bold 700 • 26px / LH 1.2</div>
+          </div>
+          
+          <!-- Font 3: Body -->
+          <div class="typo-item">
+            <div class="typo-preview" style="font-size: 13px; font-weight: 400; color: #ccc; max-width: 500px;">
+              Cuerpo: Outfit Regular. Doble medallón de carne de res fresca, queso cheddar fundido y panceta ahumada crujiente.
+            </div>
+            <div class="typo-meta">Outfit • Regular 400 • 13px / LH 1.6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frame: Botones -->
+  <div class="figma-frame" id="frame-buttons">
+    <div class="frame-label"># Componentes: Botón Principal (CTA)</div>
+    <div class="frame-content">
+      <div class="design-system-card">
+        <h3>Variantes de Botón Primario</h3>
+        <p class="ds-subtitle">Comportamiento interactivo del botón principal optimizado para conversión comercial.</p>
+        
+        <div class="buttons-matrix">
+          <!-- Row Header -->
+          <div class="matrix-row headers">
+            <div>Estado</div>
+            <div>Visualización en Canvas</div>
+            <div>Propiedades CSS</div>
+          </div>
+          
+          <!-- State: Default -->
+          <div class="matrix-row">
+            <div class="state-name">Default</div>
+            <div>
+              <button class="btn-demo default">Pedir Combo</button>
+            </div>
+            <div class="css-desc"><code>background: #d12630; color: #fff;</code></div>
+          </div>
+          
+          <!-- State: Hover -->
+          <div class="matrix-row">
+            <div class="state-name">Hover</div>
+            <div>
+              <button class="btn-demo hover">Pedir Combo</button>
+            </div>
+            <div class="css-desc"><code>background: #b01d25; box-shadow: red;</code></div>
+          </div>
+          
+          <!-- State: Pressed -->
+          <div class="matrix-row">
+            <div class="state-name">Pressed</div>
+            <div>
+              <button class="btn-demo pressed">Pedir Combo</button>
+            </div>
+            <div class="css-desc"><code>transform: scale(0.96); background: #8c131a;</code></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
