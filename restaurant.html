@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoysBurger® - Hamburguesas a la Brasa</title>
+  <!-- Google Fonts: Outfit for dynamic, bold modern headings and body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome Icons for UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset scroll hide for standalone preview */
+    body {
+      overflow-y: auto !important;
+      height: auto !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= THE LANDING PAGE CONTENT ================= -->
+  <div id="live-landing-page" class="landing-page-root" style="opacity: 1; visibility: visible; position: static; width: auto; max-width: none; min-height: 100vh;">
+    
+    <!-- 1. ENCABEZADO (HEADER) -->
+    <header class="restaurant-header">
+      <div class="header-container">
+        <a href="#inicio" class="restaurant-logo">BOYS<span class="logo-accent">BURGER</span></a>
+        <nav class="restaurant-nav">
+          <ul>
+            <li><a href="#inicio" class="nav-link">Inicio</a></li>
+            <li><a href="#menu" class="nav-link">Menú</a></li>
+            <li><a href="#historia" class="nav-link">Historia</a></li>
+            <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          </ul>
+        </nav>
+        <a href="#contacto" class="header-cta-btn">Pedir Online</a>
+      </div>
+    </header>
+
+    <!-- 2. BANNER INICIO (HERO) -->
+    <section id="inicio" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-text-content">
+          <span class="hero-tagline">100% Carne Fresca a la Brasa</span>
+          <h1 class="hero-title">Hamburguesas tan potentes que te salvarán el día</h1>
+          <p class="hero-description">
+            En <strong>BoysBurger®</strong> rompemos las reglas del fast-food convencional. Elaboramos nuestras hamburguesas con carne vacuna fresca de primera calidad (nunca congelada), queso cheddar real y salsas caseras explosivas. ¡Elige tu combo y experimenta el verdadero sabor del poder!
+          </p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn-primary">Ver Combos</a>
+            <a href="#historia" class="btn-secondary">Nuestra Historia</a>
+          </div>
+        </div>
+        <div class="hero-image-wrap">
+          <img src="Bigdaddys_img.jpg" alt="Hamburguesa BoysBurger masiva" class="hero-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECCIÓN MENÚ -->
+    <section id="menu" class="menu-section">
+      <div class="section-container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Nuestras Especialidades</span>
+          <h2 class="section-title">Elige tu Nivel de Sabor</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Filter chips -->
+        <div class="menu-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="combos">Combos</button>
+          <button class="filter-btn" data-filter="burgers">Burgers</button>
+          <button class="filter-btn" data-filter="sides-drinks">Extras & Alitas</button>
+        </div>
+
+        <!-- List of Dishes with details & pricing -->
+        <div class="menu-grid">
+          
+          <!-- Combos: Homelander -->
+          <article class="menu-card" data-category="combos">
+            <div class="menu-card-img-wrap">
+              <img src="Bigdaddys_img.jpg" alt="Combo Patria" class="menu-card-img">
+              <span class="dish-category">Combo</span>
+              <span class="dish-badge">Popular 🔥</span>
+            </div>
+            <div class="menu-card-info">
+              <div class="menu-card-header">
+                <h3 class="dish-title">Combo Patria (Homelander Triple)</h3>
+                <span class="dish-price">$18</span>
+              </div>
+              <p class="dish-description">
+                Tres medallones de carne fresca a la parrilla, triple queso cheddar fundido, panceta ahumada crujiente, cebolla crujiente y nuestra emblemática salsa Vought. Incluye papas grandes y refresco.
+              </p>
+            </div>
+          </article>
+
+          <!-- Combos: Butcher -->
+          <article class="menu-card" data-category="combos">
+            <div class="menu-card-img-wrap">
+              <img src="wendys_img.jpeg" alt="Combo Carnicero" class="menu-card-img">
+              <span class="dish-category">Combo</span>
+              <span class="dish-badge">Spicy 🌶️</span>
+            </div>
+            <div class="menu-card-info">
+              <div class="menu-card-header">
+                <h3 class="dish-title">Combo Carnicero (The Butcher Double)</h3>
+                <span class="dish-price">$16</span>
+              </div>
+              <p class="dish-description">
+                Doble medallón de carne vacuna, queso cheddar, rodajas de jalapeño asado, cebolla morada caramelizada y aderezo especial de barbacoa picante. Viene con patatas rústicas crujientes.
+              </p>
+            </div>
+          </article>
+
+          <!-- Burgers: Starlight veggie -->
+          <article class="menu-card" data-category="burgers">
+            <div class="menu-card-img-wrap">
+              <img src="Bigdaddys_img.jpg" alt="Estrella Veggie" class="menu-card-img">
+              <span class="dish-category">Burger</span>
+              <span class="dish-badge">Veggie 🌱</span>
+            </div>
+            <div class="menu-card-info">
+              <div class="menu-card-header">
+                <h3 class="dish-title">Estrella Veggie (Starlight Burger)</h3>
+                <span class="dish-price">$12</span>
+              </div>
+              <p class="dish-description">
+                Medallón crujiente a base de plantas, lechuga hidropónica, rodajas de aguacate fresco, tomates orgánicos reliquia y mayonesa vegana en pan de papa tostado. Sin TACC (apto celíacos).
+              </p>
+            </div>
+          </article>
+
+          <!-- Sides: Firecracker Wings -->
+          <article class="menu-card" data-category="sides-drinks">
+            <div class="menu-card-img-wrap">
+              <img src="kfc_img_1.webp" alt="Alitas Firecracker" class="menu-card-img">
+              <span class="dish-category">Alitas</span>
+              <span class="dish-badge">Explosiva 💥</span>
+            </div>
+            <div class="menu-card-info">
+              <div class="menu-card-header">
+                <h3 class="dish-title">Alitas Firecracker</h3>
+                <span class="dish-price">$10</span>
+              </div>
+              <p class="dish-description">
+                8 alitas de pollo súper crujientes glaseadas en salsa búfalo ultra picante (desafío picante), servidas con bastones de apio fresco y aderezo ranchero para enfriar el paladar.
+              </p>
+            </div>
+          </article>
+
+          <!-- Sides: Papas Noir -->
+          <article class="menu-card" data-category="sides-drinks">
+            <div class="menu-card-img-wrap">
+              <img src="kentuckys_img.jpg" alt="Papas Noir" class="menu-card-img">
+              <span class="dish-category">Papas</span>
+            </div>
+            <div class="menu-card-info">
+              <div class="menu-card-header">
+                <h3 class="dish-title">Papas Noir (Loaded Fries)</h3>
+                <span class="dish-price">$8</span>
+              </div>
+              <p class="dish-description">
+                Papas fritas cortadas a mano, doblemente fritas para la máxima crocantez, bañadas en salsa de queso cheddar fundido y espolvoreadas con pimienta negra recién molida y cebollino fresco.
+              </p>
+            </div>
+          </article>
+
+          <!-- Combos: Family Combo M.M. -->
+          <article class="menu-card" data-category="combos">
+            <div class="menu-card-img-wrap">
+              <img src="wendys_img.jpeg" alt="Combo Familiar M.M." class="menu-card-img">
+              <span class="dish-category">Combo</span>
+              <span class="dish-badge">Familiar 👨‍👩‍👧‍👦</span>
+            </div>
+            <div class="menu-card-info">
+              <div class="menu-card-header">
+                <h3 class="dish-title">Combo Familiar M.M. (Calidad 100%)</h3>
+                <span class="dish-price">$30</span>
+              </div>
+              <p class="dish-description">
+                El combo familiar estructurado perfecto: 2 hamburguesas clásicas con queso, 1 porción familiar de papas fritas crujientes, 1 porción de nuggets de pollo crujientes y 2 batidos tradicionales.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SECCIÓN NUESTRA HISTORIA -->
+    <section id="historia" class="history-section">
+      <div class="history-container">
+        <div class="history-image-wrap">
+          <img src="kentuckys_img.jpg" alt="BoysBurger Local" class="history-image">
+        </div>
+        <div class="history-text-content">
+          <span class="section-tag">Hecho con Rebelión</span>
+          <h2 class="section-title">El Origen de la Hamburguesa Real</h2>
+          <div class="section-line left"></div>
+          <p class="history-paragraph">
+            BoysBurger® nació del cansancio. Estábamos cansados de las hamburguesas de plástico, congeladas hace meses y envueltas en mentiras corporativas. Decidimos rebelarnos contra el sistema de comida rápida masiva y crear un lugar donde la comida se haga con respeto, frescura y sabor explosivo.
+          </p>
+          <p class="history-paragraph">
+            Usamos carne de res de campos locales que se procesa a diario. No tenemos freezers gigantes para congelar carnes, solo heladeras para mantener la frescura del día. Creemos que la velocidad no debe sacrificar la calidad real.
+          </p>
+          <div class="history-stats">
+            <div class="stat-item">
+              <span class="stat-num">0%</span>
+              <span class="stat-lbl">Carne Congelada</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-lbl">Ingredientes Frescos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SECCIÓN CONTACTO / PEDIDOS -->
+    <section id="contacto" class="contact-section">
+      <div class="section-container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Haz tu Pedido en Línea</span>
+          <h2 class="section-title">Preparamos tu Combo en Minutos</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left column: Details & Social Media -->
+          <div class="contact-info">
+            <h3>Contacto Exprés</h3>
+            <p class="contact-desc">
+              ¿Quieres hacer un pedido telefónico o necesitas catering de hamburguesas para un evento? Escríbenos o visítanos en nuestra sucursal de Palermo.
+            </p>
+            
+            <div class="contact-detail-items">
+              <div class="detail-item">
+                <i class="fa-solid fa-map-location-dot contact-icon"></i>
+                <div>
+                  <h5>Dirección</h5>
+                  <p>Av. Del Libertador 1824, Palermo, CABA, Argentina</p>
+                </div>
+              </div>
+              
+              <div class="detail-item">
+                <i class="fa-solid fa-phone contact-icon"></i>
+                <div>
+                  <h5>Teléfono de Reservas y Delivery</h5>
+                  <p>+54 11 4872-9900</p>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <i class="fa-solid fa-clock contact-icon"></i>
+                <div>
+                  <h5>Horarios de Cocina</h5>
+                  <p>Todos los días: 11:30 hs a 24:00 hs</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links-wrap">
+              <h5>Comunidad BoysBurger</h5>
+              <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" class="social-icon-link" aria-label="Visitar Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon-link" aria-label="Visitar Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon-link" aria-label="Visitar Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column: Interactive form prepared for backend -->
+          <div class="contact-form-card">
+            <h3>Solicitar Pedido Take-Away</h3>
+            
+            <form id="restaurant-contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-name">Nombre Completo</label>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="form-name" name="name" placeholder="Ej. Juan Pérez" required>
+                  </div>
+                  <span class="error-msg" id="error-name">El nombre debe tener mínimo 3 caracteres.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-email">Correo Electrónico</label>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="form-email" name="email" placeholder="Ej. juan@correo.com" required>
+                  </div>
+                  <span class="error-msg" id="error-email">Introduce un correo electrónico válido.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-subject">Selecciona tu Combo</label>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-bookmark"></i>
+                    <select id="form-subject" name="subject" required>
+                      <option value="" disabled selected>Elige una opción</option>
+                      <option value="Combo Patria (Triple Burger)">Combo Patria (Triple Burger - $18)</option>
+                      <option value="Combo Carnicero (Double Burger)">Combo Carnicero (Double Burger - $16)</option>
+                      <option value="Estrella Veggie (Starlight Burger)">Estrella Veggie (Starlight Burger - $12)</option>
+                      <option value="Alitas Firecracker">Alitas Firecracker ($10)</option>
+                      <option value="Combo Familiar M.M.">Combo Familiar M.M. ($30)</option>
+                    </select>
+                  </div>
+                  <span class="error-msg" id="error-subject">Por favor selecciona un combo para tu pedido.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-message">Especificaciones de tu pedido</label>
+                  <textarea id="form-message" name="message" rows="3" placeholder="Ej. Sin cebolla, aderezo extra, hora de retiro, etc. (mínimo 10 letras)..." required></textarea>
+                  <span class="error-msg" id="error-message">Escribe detalles sobre tu pedido (mínimo 10 caracteres).</span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-form-submit">Enviar Pedido</button>
+            </form>
+
+            <!-- Glassmorphic Success Overlay -->
+            <div class="form-success-overlay" id="form-success">
+              <div class="success-content">
+                <div class="success-icon">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3>¡Pedido Registrado con Éxito!</h3>
+                <p>La validación local de tu pedido se completó.</p>
+                <div class="form-data-preview">
+                  <h5>Payload listo para API Backend:</h5>
+                  <pre id="form-data-json"></pre>
+                </div>
+                <p class="backend-notice"><i class="fa-solid fa-code"></i> Formulario validado con JS. Listo para envío asíncrono.</p>
+                <button class="btn-success-close" id="btn-success-close">Hacer otro Pedido</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="restaurant-footer">
+      <div class="footer-container">
+        <p class="copyright">&copy; 2026 BoysBurger® SRL. Todos los derechos reservados. Trabajo Académico de Diseño y Desarrollo Web.</p>
+        <p class="developer-credit">Diseño y Prototipo justificado para consigna académica en Figma.</p>
+      </div>
+    </footer>
+
+  </div>
+  <!-- ================= END OF LANDING PAGE CONTENT ================= -->
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+</body>
+</html>
